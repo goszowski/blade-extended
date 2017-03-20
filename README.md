@@ -10,7 +10,7 @@ BladeExtended is a simple library, adding `bd-foreach`, `bd-inner-foreach`, `bd-
 ```html
  <ul>
  	<li bd-foreach="$items as $item" bd-if="$item->name !== '_dev'">
- 		<a href="#">{{{ $item->name }}}</a>
+ 		<a href="#">{{ $item->name }}</a>
  	</li>
  </ul>
 ```
@@ -19,8 +19,8 @@ BladeExtended is a simple library, adding `bd-foreach`, `bd-inner-foreach`, `bd-
 
 ```html
  <ul bd-inner-foreach="$items as $i => $item">
- 	<li>{{{ $i }}}</li>
- 	<li>{{{ $item }}}</li>
+ 	<li>{{ $i }}</li>
+ 	<li>{{ $item }}</li>
  </ul>
 ```
 
