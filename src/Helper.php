@@ -1,5 +1,6 @@
 <?php
 namespace Goszowski\BladeExtended;
+use Illuminate\Support\HtmlString;
 
 class Helper
 {
@@ -12,7 +13,7 @@ class Helper
 		$class = self::filterArguments(func_get_args());
 		if ( ! empty($class))
 		{
-			return implode(' ', $class) . ' ';
+			return new HtmlString(implode(' ', $class) . ' ');
 		}
 		return '';
 	}
@@ -27,7 +28,7 @@ class Helper
 		$values = self::filterArguments($args);
 		if ( ! empty($values))
 		{
-			return ' ' . $attribute . '="' . implode(' ', $values) . '"';
+			return new HtmlString(' ' . $attribute . '="' . implode(' ', $values) . '"');
 		}
 		return '';
 	}
@@ -46,6 +47,7 @@ class Helper
 			if (trim($el) === '') return false;
 			return true;
 		});
+		// dd($class);
 		return $class;
 	}
 }
